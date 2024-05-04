@@ -15,7 +15,6 @@ public class Program {
 
     public Program() {
         Commands.clearConsole();
-        Scanner sc = new Scanner(System.in);
         System.out.println("\n========= Word Ladder Solver =========");
         System.out.print("Input your initial word\n=> ");
         this.initial_string = Commands.stringInput();
@@ -23,7 +22,6 @@ public class Program {
         this.final_string = Commands.stringInput();
     }
 
-    // TODO: Tambahin waktu eksekusi dan jumlah node visit
     public void run() {
         try {
             System.out.println("Choose your algorithm below:");
