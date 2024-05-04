@@ -9,7 +9,7 @@ public class FileScanner {
     Scanner sc;
 
     public FileScanner() throws Exception{
-        this.filePath = "asset/dictionary.txt";
+        this.filePath = "../../../asset/dictionary.txt";
         file = new File(filePath);
         sc = new Scanner(file);
     }
@@ -21,7 +21,7 @@ public class FileScanner {
     }
 
     public Map<String,Boolean> getWords(int length){
-        Map<String,Boolean> words = new HashMap<String,Boolean>();
+        Map<String,Boolean> words = new HashMap<>();
         while(sc.hasNextLine()){
             String word = sc.nextLine();
             if(word.length()==length){

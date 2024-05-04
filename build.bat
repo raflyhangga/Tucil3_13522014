@@ -1,0 +1,1 @@
+javac -d bin/production/tucil3_stima -sourcepath src src/Dictionary/*.java src/Program/*.java src/ReadFile/*.java src/Solver/*.java src/Solver/WordNode/*.java src/*.java

@@ -1,12 +1,10 @@
 package Program;
 
+import Dictionary.*;
+import Solver.*;
+import Solver.WordNode.WordNode;
 import java.time.Duration;
 import java.time.Instant;
-import java.util.Scanner;
-import Dictionary.*;
-import Solver.Solver;
-import Solver.WordNode.WordNode;
-import Solver.*;
 
 
 public class Program {
@@ -29,12 +27,13 @@ public class Program {
             System.out.println("2. Greedy Best Search");
             System.out.print("3. A* Algorithm\n=> ");
             int choice = Commands.intInput();
-            Solver sv = switch (choice) {
-                case 1 -> new UniformSearch(initial_string, final_string);
-                case 2 -> new GreedyBest(initial_string, final_string);
-                case 3 -> new AStar(initial_string, final_string);
-                default -> throw new Exception("Invalid choice");
-            };
+            Solver sv;
+            switch (choice) {
+                case 1 : sv = new UniformSearch(initial_string, final_string); break;
+                case 2 : sv = new GreedyBest(initial_string, final_string); break;
+                case 3 : sv = new AStar(initial_string, final_string); break;
+                default : throw new Exception("Invalid choice");
+            }
             Instant start = Instant.now();
             WordNode result = sv.solve();
             Instant end = Instant.now();

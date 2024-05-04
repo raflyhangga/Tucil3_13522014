@@ -46,8 +46,8 @@ public abstract class Solver {
 
     public List<String> getNewPath(WordNode current_node) {
         List<String> new_path;
-        new_path = new ArrayList<>(current_node.paths());
-        new_path.add(current_node.word());
+        new_path = new ArrayList<>(current_node.getPaths());
+        new_path.add(current_node.getWord());
         return new_path;
     }
 
@@ -59,19 +59,19 @@ public abstract class Solver {
         WordNode initial_node = new WordNode(this.start_word,0,new ArrayList<>());
 
         getAdjacentWords(initial_node);
-        if(initial_node.word().equalsIgnoreCase(goal_word)){
+        if(initial_node.getWord().equalsIgnoreCase(goal_word)){
             return initial_node;
         }
-        visited_node.put(initial_node.word().toLowerCase(),true);
+        visited_node.put(initial_node.getWord().toLowerCase(),true);
         this.node_amount++;
 
         while(!queue.isEmpty()){
             this.node_amount++;
             WordNode current_node = queue.remove();
-            if(current_node.word().equalsIgnoreCase(goal_word)){
+            if(current_node.getWord().equalsIgnoreCase(goal_word)){
                 return current_node;
             } else {
-                visited_node.put(current_node.word().toLowerCase(),true);
+                visited_node.put(current_node.getWord().toLowerCase(),true);
                 getAdjacentWords(current_node);
             }
         }

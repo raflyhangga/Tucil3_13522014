@@ -20,7 +20,7 @@ public class GreedyBest extends Solver {
         new_path = getNewPath(current_node);
 
         for(String word : visited_node.keySet()){
-            if(!visited_node.get(word) && (Dictionary.getDistance(current_node.word(),word) == 1)){
+            if(!visited_node.get(word) && (Dictionary.getDistance(current_node.getWord(),word) == 1)){
                 WordNode temp_node = new WordNode(word,getCost(word),new_path);
                 this.queue.add(temp_node);
             }

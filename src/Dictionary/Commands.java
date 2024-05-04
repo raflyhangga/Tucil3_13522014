@@ -37,7 +37,6 @@ public class Commands {
     }
 
     public static Boolean boolInput(){
-        Scanner sc = new Scanner(System.in);
         while(true){
             System.out.print("=> ");
             String word = stringInput();
@@ -55,12 +54,12 @@ public class Commands {
     public static void printResult(WordNode result, Duration duration, Integer visited_nodes){
         Commands.clearConsole();
         System.out.println("=============== HASIL ===============");
-        System.out.println("found solution with minimal path " + result.paths().size());
+        System.out.println("found solution with minimal path " + result.getPaths().size());
         System.out.println("with execution time "+duration.toMillis()+" millisecond and "+visited_nodes+" node visited");
         System.out.println("<== Path ==>");
 
-        result.paths().add(result.word());
-        for(String path: result.paths()){
+        result.appendPath(result.getWord());
+        for(String path: result.getPaths()){
             System.out.println(path);
         }
     }

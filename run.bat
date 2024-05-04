@@ -1,0 +1,1 @@
+cd .\bin\production\tucil3_stima\ && java Main
