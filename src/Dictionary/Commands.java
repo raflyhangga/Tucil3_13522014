@@ -1,8 +1,6 @@
 package Dictionary;
 
 import Solver.WordNode.WordNode;
-
-import java.io.FileNotFoundException;
 import java.time.Duration;
 import java.util.Scanner;
 

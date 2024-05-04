@@ -31,7 +31,7 @@ public class Dictionary {
             }
         }
         return difference;
-    };
+    }
 
     public static Boolean isAlphabetic(String word) {
         char[] chars = word.toCharArray();
