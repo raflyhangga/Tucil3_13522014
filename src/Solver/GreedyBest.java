@@ -11,6 +11,10 @@ public class GreedyBest extends Solver {
         super(start_word,end_word);
     }
 
+    public GreedyBest(String start_word, String end_word, String filePath) throws Exception {
+        super(start_word,end_word,filePath);
+    }
+
     public Integer getCost(String word){
         return Dictionary.getDistance(word,goal_word);
     }

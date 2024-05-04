@@ -9,6 +9,10 @@ public class UniformSearch extends Solver {
         super(start_word, goal_word);
     }
 
+    public UniformSearch(String start_word,String goal_word, String filePath) throws Exception {
+        super(start_word, goal_word,filePath);
+    }
+
     public Integer getCost(String word){
         return Dictionary.getDistance(word,start_word);
     }

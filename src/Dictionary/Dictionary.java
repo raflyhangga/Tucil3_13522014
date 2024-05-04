@@ -13,6 +13,12 @@ public class Dictionary {
         this.wordLength = length;
     }
 
+    public Dictionary(int length, String fileName) throws Exception {
+        FileScanner fs = new FileScanner(fileName);
+        words = fs.getWords(length);
+        this.wordLength = length;
+    }
+
     public Map<String, Boolean> getWords() {
         return words;
     }

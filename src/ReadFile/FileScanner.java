@@ -15,8 +15,8 @@ public class FileScanner {
     }
 
     public FileScanner(String filePath) throws Exception{
-        this.filePath = filePath;
-        file = new File(filePath);
+        this.filePath = "../../../asset/"+filePath;
+        file = new File(this.filePath);
         sc = new Scanner(file);
     }
 

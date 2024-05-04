@@ -2,6 +2,7 @@ package Dictionary;
 
 import Solver.WordNode.WordNode;
 
+import java.io.FileNotFoundException;
 import java.time.Duration;
 import java.util.Scanner;
 
@@ -15,6 +16,16 @@ public class Commands {
         }
 
         return word;
+    }
+
+    public static String fileInput() throws Exception {
+        System.out.println("Do you have your custom dictionary? (y/n)");
+        if(boolInput()) {
+            System.out.print("Enter your custom dictionary (Put your .txt file in asset folder, insert without the .txt): \n=> ");
+            return stringInput() + ".txt";
+        } else {
+            throw new Exception("You choose the default dictionary");
+        }
     }
 
     public static int intInput() {

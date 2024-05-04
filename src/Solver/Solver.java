@@ -36,6 +36,26 @@ public abstract class Solver {
         queue = new PriorityQueue<>(new WordNodeComparator());
     }
 
+    public Solver(String start_word,String goal_word,String filePath) throws Exception {
+        if(start_word.length() != goal_word.length()){
+            throw new Exception("Start word length does not match Goal Word length");
+        }
+        Dictionary dictionary = new Dictionary(goal_word.length(),filePath);
+
+        visited_node =  dictionary.getWords();
+        if(!visited_node.containsKey(start_word.toLowerCase())){
+            throw new Exception("Your start word doesn't exist");
+        }
+        if(!visited_node.containsKey(goal_word.toLowerCase())){
+            throw new Exception("Your goal words doesn't exist");
+        }
+
+        this.goal_word = goal_word.toLowerCase();
+        this.start_word = start_word.toLowerCase();
+        this.node_amount = 0;
+        queue = new PriorityQueue<>(new WordNodeComparator());
+    }
+
     public Integer getCost(List<String> path) {
         return path.size();
     }
@@ -56,6 +76,7 @@ public abstract class Solver {
     }
 
     public WordNode solve() throws Exception {
+        System.out.println("Solving " + this.goal_word + " from " + this.start_word +"....");
         WordNode initial_node = new WordNode(this.start_word,0,new ArrayList<>());
 
         getAdjacentWords(initial_node);

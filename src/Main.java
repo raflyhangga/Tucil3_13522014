@@ -3,7 +3,6 @@ import Program.Program;
 
 public class Main {
     public static void main(String[] args) {
-        //TODO: Clear screen when initialize program and custom dictionary support
         boolean choice = true;
         while(choice){
             Program mainprogram = new Program();

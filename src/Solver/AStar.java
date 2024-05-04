@@ -10,6 +10,10 @@ public class AStar extends Solver {
         super(start_word,end_word);
     }
 
+    public AStar(String start_word, String end_word, String filePath) throws Exception {
+        super(start_word,end_word,filePath);
+    }
+
     public Integer getCost(String word){
         return Dictionary.getDistance(word,goal_word) + Dictionary.getDistance(word,start_word);
     }
