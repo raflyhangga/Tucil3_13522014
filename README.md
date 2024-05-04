@@ -4,15 +4,6 @@
 
 This repository contains an implementation of a ⭐***Word Ladder Solver***⭐ using three different search algorithms: **Uniform Cost Search**, **Greedy Best Search**, and **A Star**. Word Ladder is a word game where the player transforms one word into another by changing one letter at a time, creating a chain of words with each consecutive word differing by a single letter.
 
-## 📋 Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Algorithms](#algorithms)
-- [Contributor](#contributor)
-
 ## ✨ Introduction
 
 The Word Ladder Solver is a Java-based project aimed at finding the shortest path between two words by changing one letter at a time, such that each intermediate word is also a valid word in the dictionary.
@@ -30,13 +21,13 @@ The Word Ladder Solver is a Java-based project aimed at finding the shortest pat
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone https://github.com/raflyhangga/Tucil3_13522014
    ```
 
 2. Navigate into the project directory:
 
-   ```bash
+   ```
    cd Tucil3_13522014
    ```
 
