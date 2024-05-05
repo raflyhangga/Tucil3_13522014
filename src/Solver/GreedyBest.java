@@ -18,7 +18,7 @@ public class GreedyBest extends Solver {
      * Fungsi untuk mendapatkan biaya untuk suatu simpul
      * */
     public Integer getCost(String word){
-        return Dictionary.getDistance(word,goal_word);
+        return Dictionary.getDistance(word,this.goal_word);
     }
 
     public void getAdjacentWords(WordNode current_node){
