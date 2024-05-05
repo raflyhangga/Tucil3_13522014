@@ -2,7 +2,6 @@ import Dictionary.Commands;
 import Program.Program;
 
 public class Main {
-    //TODO: Untuk No Path, bikin waktu eksekusi dan node dijelajahi
     public static void main(String[] args) {
         boolean choice = true;
         while(choice){
