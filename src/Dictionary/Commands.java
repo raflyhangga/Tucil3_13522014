@@ -27,6 +27,7 @@ public class Commands {
     public static String fileInput() throws Exception {
         System.out.println("Do you have your custom dictionary? (y/n)");
         if(boolInput()) {
+            System.out.println("ATTENTION! make sure your file name has no symbol in it!");
             System.out.print("Enter your custom dictionary (Put your .txt file in asset folder, insert without the .txt): \n=> ");
             return stringInput() + ".txt";
         } else {
