@@ -45,6 +45,8 @@ public class Program {
                     break;
                 } catch (FileNotFoundException e) {
                     System.out.println(e.getMessage());
+                } catch(WordSizeNotEqualException ignored){
+
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
                     switch (choice) {

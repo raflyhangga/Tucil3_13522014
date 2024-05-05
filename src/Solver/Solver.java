@@ -43,7 +43,7 @@ public abstract class Solver {
 
     public Solver(String start_word,String goal_word,String filePath) throws Exception {
         if(start_word.length() != goal_word.length()){
-            throw new Exception("Start word length does not match Goal Word length");
+            throw new WordSizeNotEqualException();
         }
         Dictionary dictionary = new Dictionary(goal_word.length(),filePath);
 
