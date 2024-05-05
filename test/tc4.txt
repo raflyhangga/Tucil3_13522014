@@ -1,0 +1,59 @@
+UCS 
+=============== HASIL ===============
+found solution with minimal path 9
+with execution time 16284 millisecond and 57146 node visited
+<== Path ==>
+seven
+sever
+serer
+seres
+sires
+sines
+sinhs
+sighs
+sight
+eight
+
+GDBFS
+=============== HASIL ===============
+found solution with minimal path 21
+with execution time 28 millisecond and 92 node visited
+<== Path ==>
+seven
+sever
+siver
+fiver
+river
+riven
+rives
+jives
+dives
+diver
+dived
+diced
+riced
+riled
+riped
+siped
+sipes
+sines
+sinhs
+sighs
+sight
+eight
+
+A*
+=============== HASIL ===============
+found solution with minimal path 9
+with execution time 328 millisecond and 987 node visited
+<== Path ==>
+seven
+semen
+semes
+sexes
+sixes
+sines
+sinhs
+sighs
+sight
+eight

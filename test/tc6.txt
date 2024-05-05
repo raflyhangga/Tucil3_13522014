@@ -1,0 +1,36 @@
+UCS 
+=============== HASIL ===============
+found solution with minimal path 5
+with execution time 2411 millisecond and 31733 node visited
+<== Path ==>
+bank
+bonk
+book
+boon
+loon
+loan
+
+GDBFS
+=============== HASIL ===============
+found solution with minimal path 6
+with execution time 1 millisecond and 10 node visited
+<== Path ==>
+bank
+lank
+link
+linn
+lion
+loon
+loan
+
+A*
+=============== HASIL ===============
+found solution with minimal path 5
+with execution time 6 millisecond and 50 node visited
+<== Path ==>
+bank
+bonk
+book
+boon
+loon
+loan

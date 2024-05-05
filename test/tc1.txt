@@ -1,0 +1,60 @@
+UCS
+=============== HASIL ===============
+found solution with minimal path 12
+with execution time 20028 millisecond and 19290 node visited
+<== Path ==>
+fruits
+bruits
+brunts
+brants
+bracts
+braces
+braced
+braked
+beaked
+becked
+backed
+basked
+basket
+
+GDBFS
+=============== HASIL ===============
+found solution with minimal path 16
+with execution time 29 millisecond and 41 node visited
+<== Path ==>
+fruits
+bruits
+bruins
+brains
+brails
+braids
+brands
+brants
+bracts
+braces
+brakes
+braked
+beaked
+becked
+backed
+basked
+basket
+
+A*
+=============== HASIL ===============
+found solution with minimal path 12
+with execution time 405 millisecond and 346 node visited
+<== Path ==>
+fruits
+bruits
+brunts
+brants
+bracts
+braces
+brakes
+braked
+beaked
+becked
+backed
+basked
+basket

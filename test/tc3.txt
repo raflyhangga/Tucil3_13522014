@@ -1,0 +1,49 @@
+UCS
+=============== HASIL ===============
+found solution with minimal path 8
+with execution time 13378 millisecond and 44197 node visited
+<== Path ==>
+piano
+pians
+plans
+plays
+clays
+chays
+chars
+chard
+chord
+
+GDBFS
+=============== HASIL ===============
+found solution with minimal path 12
+with execution time 8 millisecond and 23 node visited
+<== Path ==>
+piano
+pians
+pions
+cions
+clons
+clops
+chops
+chows
+chews
+chaws
+chars
+chard
+chord
+
+A*
+=============== HASIL ===============
+found solution with minimal path 8
+with execution time 36 millisecond and 90 node visited
+<== Path ==>
+piano
+pians
+plans
+plays
+clays
+chays
+chars
+chard
+chord
+Insert another prompt? (y/n)

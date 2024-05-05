@@ -1,0 +1,14 @@
+UCS
+=============== HASIL ===============
+NO SOLUTION FOUND!!!
+Traversed path with execution time 1 millisecond and 1 node visited
+
+GDBFS
+=============== HASIL ===============
+NO SOLUTION FOUND!!!
+Traversed path with execution time 1 millisecond and 1 node visited
+
+A*
+=============== HASIL ===============
+NO SOLUTION FOUND!!!
+Traversed path with execution time 1 millisecond and 1 node visited

@@ -1,0 +1,60 @@
+UCS 
+=============== HASIL ===============
+found solution with minimal path 9
+with execution time 10433 millisecond and 38455 node visited
+<== Path ==>
+frown
+frows
+crows
+chows
+shows
+shots
+shote
+smote
+smite
+smile
+
+GDBFS
+=============== HASIL ===============
+found solution with minimal path 22
+with execution time 20 millisecond and 62 node visited
+<== Path ==>
+frown
+drown
+drawn
+drawl
+draws
+drams
+drama
+grama
+grams
+grabs
+drabs
+dribs
+dries
+tries
+trips
+tripe
+trice
+twice
+twine
+swine
+spine
+spile
+smile
+
+A*
+=============== HASIL ===============
+found solution with minimal path 9
+with execution time 210 millisecond and 646 node visited
+<== Path ==>
+frown
+frows
+flows
+flops
+flips
+slips
+slipe
+stipe
+stile
+smile
