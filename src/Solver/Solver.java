@@ -34,6 +34,7 @@ public abstract class Solver {
         this.start_word = start_word.toLowerCase();
         this.node_amount = 0;
         queue = new PriorityQueue<>(new WordNodeComparator());
+        queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
     }
 
     public Solver(String start_word,String goal_word,String filePath) throws Exception {
@@ -54,13 +55,8 @@ public abstract class Solver {
         this.start_word = start_word.toLowerCase();
         this.node_amount = 0;
         queue = new PriorityQueue<>(new WordNodeComparator());
+        queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
     }
-
-    public Integer getCost(List<String> path) {
-        return path.size();
-    }
-
-    public abstract Integer getCost(String word);
 
     public abstract void getAdjacentWords(WordNode current_node);
 
@@ -77,15 +73,6 @@ public abstract class Solver {
 
     public WordNode solve() throws Exception {
         System.out.println("Solving " + this.goal_word + " from " + this.start_word +"....");
-        WordNode initial_node = new WordNode(this.start_word,0,new ArrayList<>());
-
-        getAdjacentWords(initial_node);
-        if(initial_node.getWord().equalsIgnoreCase(goal_word)){
-            return initial_node;
-        }
-        visited_node.put(initial_node.getWord().toLowerCase(),true);
-        this.node_amount++;
-
         while(!queue.isEmpty()){
             this.node_amount++;
             WordNode current_node = queue.remove();

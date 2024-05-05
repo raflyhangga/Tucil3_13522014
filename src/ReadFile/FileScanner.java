@@ -25,7 +25,6 @@ public class FileScanner {
         while(sc.hasNextLine()){
             String word = sc.nextLine();
             if(word.length()==length){
-//                System.out.println(word.toLowerCase());
                 words.put(word.toLowerCase(),false);
             }
         }

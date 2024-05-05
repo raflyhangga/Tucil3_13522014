@@ -14,8 +14,8 @@ public class AStar extends Solver {
         super(start_word,end_word,filePath);
     }
 
-    public Integer getCost(String word){
-        return Dictionary.getDistance(word,goal_word) + Dictionary.getDistance(word,start_word);
+    public Integer getCost(List<String> path, String word) {
+        return Dictionary.getDistance(word,goal_word) + path.size();
     }
 
     public void getAdjacentWords(WordNode current_node){
@@ -24,10 +24,9 @@ public class AStar extends Solver {
 
         for(String word : visited_node.keySet()){
             if(!visited_node.get(word) && (Dictionary.getDistance(current_node.getWord(),word) == 1)){
-                WordNode temp_node = new WordNode(word,getCost(word),new_path);
+                WordNode temp_node = new WordNode(word,getCost(new_path,word),new_path);
                 this.queue.add(temp_node);
             }
         }
     }
-
 }
