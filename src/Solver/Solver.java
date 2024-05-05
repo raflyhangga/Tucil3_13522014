@@ -5,8 +5,6 @@ import Solver.WordNode.WordNode;
 import Solver.WordNode.WordNodeComparator;
 import Exception.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
@@ -17,7 +15,9 @@ public abstract class Solver {
     PriorityQueue<WordNode> queue;
     final Map<String,Boolean> visited_node;
 
-    // Constructor
+    /**
+     * Constructor
+     * */
     public Solver(String start_word,String goal_word) throws Exception {
         if(start_word.length() != goal_word.length()){
             throw new Exception("Start word length does not match Goal Word length");
@@ -38,7 +38,7 @@ public abstract class Solver {
 
         // Inisialisasi Queue
         queue = new PriorityQueue<>(new WordNodeComparator());
-        queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
+        queue.add(new WordNode(this.start_word,0,null));
     }
 
     public Solver(String start_word,String goal_word,String filePath) throws Exception {
@@ -61,7 +61,7 @@ public abstract class Solver {
 
         // Inisialisasi Queue
         queue = new PriorityQueue<>(new WordNodeComparator());
-        queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
+        queue.add(new WordNode(this.start_word,0,null));
     }
 
     /**
@@ -70,15 +70,6 @@ public abstract class Solver {
      * */
     public abstract void getAdjacentWords(WordNode current_node);
 
-    /**
-     * Fungsi untuk mendapatkan path baru hasil ekspansi suatu simpul
-     * */
-    public List<String> getNewPath(WordNode current_node) {
-        List<String> new_path;
-        new_path = new ArrayList<>(current_node.getPaths());
-        new_path.add(current_node.getWord());
-        return new_path;
-    }
 
     /**
      * Fungsi untuk mengembalikan jumlah simpul yang dikunjungi

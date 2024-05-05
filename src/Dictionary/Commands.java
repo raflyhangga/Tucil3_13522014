@@ -5,6 +5,10 @@ import java.time.Duration;
 import java.util.Scanner;
 
 public class Commands {
+    /**
+     * Fungsi untuk mendapatkan string dari input. String akan direturn apabila alfabetik dan tidak kosong
+     * @return string
+     * */
     public static String stringInput(){
         Scanner sc = new Scanner(System.in);
         String word = sc.nextLine();
@@ -16,6 +20,10 @@ public class Commands {
         return word;
     }
 
+    /**
+     * Fungsi untuk mendapatkan string untuk file input. String akan direturn apabila alfabetik dan tidak kosong
+     * @exception Exception berisi pesan "You choose the default dictionary"
+     * */
     public static String fileInput() throws Exception {
         System.out.println("Do you have your custom dictionary? (y/n)");
         if(boolInput()) {
@@ -26,6 +34,10 @@ public class Commands {
         }
     }
 
+    /**
+     * Fungsi untuk mendapatkan integer dari input. integer akan direturn apabila alfabetik dan tidak kosong
+     * @return integer
+     * */
     public static int intInput() {
         Scanner sc = new Scanner(System.in);
         int number;
@@ -45,6 +57,10 @@ public class Commands {
         return number;
     }
 
+    /**
+     * Fungsi untuk mendapatkan boolean dari input boolean akan direturn apabila input berisikan Y atau N
+     * @return true jika input Y dan false jika input N dengan tidak memerhatikan kapital
+     * */
     public static Boolean boolInput(){
         while(true){
             System.out.print("=> ");
@@ -60,19 +76,24 @@ public class Commands {
         }
     }
 
+    /**
+     * Fungsi untuk mendapatkan result
+     * */
     public static void printResult(WordNode result, Duration duration, Integer visited_nodes){
         Commands.clearConsole();
         System.out.println("=============== HASIL ===============");
-        System.out.println("found solution with minimal path " + result.getPaths().size());
+        System.out.println("found solution with minimal path " + (WordNode.countPath(result)-1));
         System.out.println("with execution time "+duration.toMillis()+" millisecond and "+visited_nodes+" node visited");
         System.out.println("<== Path ==>");
 
-        result.appendPath(result.getWord());
-        for(String path: result.getPaths()){
+        for(String path: WordNode.getPaths(result)){
             System.out.println(path);
         }
     }
 
+    /**
+     * Fungsi untuk mendapatkan result jika tidak ada solusi
+     * */
     public static void printResult(Duration duration, Integer visited_nodes){
         Commands.clearConsole();
         System.out.println("=============== HASIL ===============");
@@ -80,6 +101,9 @@ public class Commands {
         System.out.println("Traversed path with execution time "+duration.toMillis()+" millisecond and "+visited_nodes+" node visited");
     }
 
+    /**
+     * Fungsi untuk mendireksi kursor konsol
+     * */
     public static void clearConsole()
     {
         System.out.print("\033[H\033[2J");

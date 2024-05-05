@@ -8,6 +8,9 @@ public class FileScanner {
     File file;
     Scanner sc;
 
+    /**
+     * Constructor
+     * */
     public FileScanner() throws Exception{
         this.filePath = "../../../asset/spek.txt";
         file = new File(filePath);
@@ -20,6 +23,10 @@ public class FileScanner {
         sc = new Scanner(file);
     }
 
+    /**
+     * Fungsi untuk mengembalikan word pada file .txt
+     * @return map of string and boolean
+     * */
     public Map<String,Boolean> getWords(int length){
         Map<String,Boolean> words = new HashMap<>();
         while(sc.hasNextLine()){
