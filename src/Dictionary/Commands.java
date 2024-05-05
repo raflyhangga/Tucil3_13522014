@@ -73,6 +73,13 @@ public class Commands {
         }
     }
 
+    public static void printResult(Duration duration, Integer visited_nodes){
+        Commands.clearConsole();
+        System.out.println("=============== HASIL ===============");
+        System.out.println("NO SOLUTION FOUND!!!");
+        System.out.println("Traversed path with execution time "+duration.toMillis()+" millisecond and "+visited_nodes+" node visited");
+    }
+
     public static void clearConsole()
     {
         System.out.print("\033[H\033[2J");

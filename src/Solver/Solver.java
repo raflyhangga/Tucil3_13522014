@@ -3,6 +3,7 @@ package Solver;
 import Dictionary.Dictionary;
 import Solver.WordNode.WordNode;
 import Solver.WordNode.WordNodeComparator;
+import Exception.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +17,7 @@ public abstract class Solver {
     PriorityQueue<WordNode> queue;
     final Map<String,Boolean> visited_node;
 
+    // Constructor
     public Solver(String start_word,String goal_word) throws Exception {
         if(start_word.length() != goal_word.length()){
             throw new Exception("Start word length does not match Goal Word length");
@@ -33,6 +35,8 @@ public abstract class Solver {
         this.goal_word = goal_word.toLowerCase();
         this.start_word = start_word.toLowerCase();
         this.node_amount = 0;
+
+        // Inisialisasi Queue
         queue = new PriorityQueue<>(new WordNodeComparator());
         queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
     }
@@ -54,12 +58,21 @@ public abstract class Solver {
         this.goal_word = goal_word.toLowerCase();
         this.start_word = start_word.toLowerCase();
         this.node_amount = 0;
+
+        // Inisialisasi Queue
         queue = new PriorityQueue<>(new WordNodeComparator());
         queue.add(new WordNode(this.start_word,0,new ArrayList<>()));
     }
 
+    /**
+     * Method untuk Ekspansi,
+     * Ekspansi bersifat asbtrak agar setiap algoritma dapat menyesuaikan
+     * */
     public abstract void getAdjacentWords(WordNode current_node);
 
+    /**
+     * Fungsi untuk mendapatkan path baru hasil ekspansi suatu simpul
+     * */
     public List<String> getNewPath(WordNode current_node) {
         List<String> new_path;
         new_path = new ArrayList<>(current_node.getPaths());
@@ -67,10 +80,16 @@ public abstract class Solver {
         return new_path;
     }
 
+    /**
+     * Fungsi untuk mengembalikan jumlah simpul yang dikunjungi
+     * */
     public Integer getNodeAmount() {
         return this.node_amount;
     }
 
+    /**
+     * Fungsi untuk melakukan implementasi algoritma
+     * */
     public WordNode solve() throws Exception {
         System.out.println("Solving " + this.goal_word + " from " + this.start_word +"....");
         while(!queue.isEmpty()){
@@ -83,8 +102,6 @@ public abstract class Solver {
                 getAdjacentWords(current_node);
             }
         }
-        throw new Exception("No solution found");
+        throw new SolutionNotFoundException();
     }
-
-
 }

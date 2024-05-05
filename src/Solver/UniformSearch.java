@@ -12,7 +12,9 @@ public class UniformSearch extends Solver {
     public UniformSearch(String start_word,String goal_word, String filePath) throws Exception {
         super(start_word, goal_word,filePath);
     }
-
+    /**
+     * Fungsi untuk mendapatkan biaya untuk suatu simpul
+     * */
     public Integer getCost(List<String> path) {
         return path.size();
     }
@@ -28,6 +30,4 @@ public class UniformSearch extends Solver {
             }
         }
     }
-
-
 }

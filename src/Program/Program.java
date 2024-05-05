@@ -3,6 +3,7 @@ package Program;
 import Dictionary.*;
 import Solver.*;
 import Solver.WordNode.WordNode;
+import Exception.*;
 
 import java.io.FileNotFoundException;
 import java.time.Duration;
@@ -57,11 +58,18 @@ public class Program {
             }
 
             Instant start = Instant.now();
-            WordNode result = sv.solve();
+            WordNode result;
+            try{
+                result = sv.solve();
+            } catch (SolutionNotFoundException err){
+                Instant end = Instant.now();
+                Commands.printResult(Duration.between(start,end),sv.getNodeAmount());
+                return;
+            }
             Instant end = Instant.now();
             Commands.printResult(result, Duration.between(start,end),sv.getNodeAmount());
         } catch(Exception e) {
-            System.out.println("====== HASIL ======");
+            System.out.println("====== Error ======");
             System.out.println(e.getMessage());
         }
     }

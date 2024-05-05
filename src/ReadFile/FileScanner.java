@@ -9,7 +9,7 @@ public class FileScanner {
     Scanner sc;
 
     public FileScanner() throws Exception{
-        this.filePath = "../../../asset/dictionary.txt";
+        this.filePath = "../../../asset/spek.txt";
         file = new File(filePath);
         sc = new Scanner(file);
     }

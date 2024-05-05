@@ -14,6 +14,9 @@ public class AStar extends Solver {
         super(start_word,end_word,filePath);
     }
 
+    /**
+     * Fungsi untuk mendapatkan biaya untuk suatu simpul
+     * */
     public Integer getCost(List<String> path, String word) {
         return Dictionary.getDistance(word,goal_word) + path.size();
     }

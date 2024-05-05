@@ -6,7 +6,6 @@ import java.util.List;
 
 
 public class GreedyBest extends Solver {
-
     public GreedyBest(String start_word, String end_word) throws Exception {
         super(start_word,end_word);
     }
@@ -15,6 +14,9 @@ public class GreedyBest extends Solver {
         super(start_word,end_word,filePath);
     }
 
+    /**
+     * Fungsi untuk mendapatkan biaya untuk suatu simpul
+     * */
     public Integer getCost(String word){
         return Dictionary.getDistance(word,goal_word);
     }
@@ -30,5 +32,4 @@ public class GreedyBest extends Solver {
             }
         }
     }
-
 }

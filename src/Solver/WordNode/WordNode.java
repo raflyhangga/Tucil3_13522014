@@ -25,6 +25,9 @@ public class WordNode {
         return paths;
     }
 
+    /**
+     * Fungsi untuk menambahkan path
+     * */
     public void appendPath(String path){
         paths.add(path);
     }
